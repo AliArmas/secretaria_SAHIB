@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Secretaría de Agricultura y Pesca</title>
+  <base href="/">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="shortcut icon" href="assets/favicon.ico">
+<!-- Google Fonts --> 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab"> 
+<!-- CSS Global Compulsory -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="assets/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/dzsparallaxer.css">
+  <link rel="stylesheet" href="assets/css/scroller.css">
+  <link rel="stylesheet" href="assets/css/hamburgers.min.css">
+  <link rel="stylesheet" href="assets/css/icon-hs.css">
+  <link rel="stylesheet" href="assets/css/unify-core.css">
+  <link rel="stylesheet" href="assets/css/unify-components.css">
+  <link rel="stylesheet" href="assets/css/unify-globals.css">
+  <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="assets/js/jquery.fancybox.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+<script src="assets/js/dzsparallaxer.js"></script>
+<script src="assets/js/scroller.js"></script>
+
+<script src="assets/js/hs.hamburgers.js"></script>
+<script src="assets/js/hs.dropdown.js"></script>
+
+<script src="assets/js/custom.js"></script>
+
+<script>
+$(document).ready(function() {
+ $('#myModal').modal('toggle')
+});
+</script>
+
+<script>
+$(document).ready(function() {
+ $('#myModal1').modal('toggle')
+});
+</script>
+
+<script>
+function CloseVideo(){
+document.getElementById("VideoId").innerHTML="&nbsp;";
+};
+</script>
+
+<script>
+var player;
+function onYouTubeIframeAPIReady() {
+player = new YT.Player('player', {
+    events: {
+        'onStateChange': onPlayerStateChange
+    }
+});
+}
+
+function onPlayerReady(event) {
+event.target.playVideo();
+}
+var done = false;
+
+function onPlayerStateChange(event) {
+if (event.data == YT.PlayerState.PLAYING && !done) {
+    $('#myCarousel').carousel('pause');
+    done = true;
+}
+}
+
+</script>     
+
+<script>
+$('a.carousel-control-prev').click(function(){
+$('#player')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+});
+
+$('a.carousel-control-next').click(function(){
+$('#player')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+});
+</script>
+
+<script>
+$(document).on('ready', function () {
+    
+    $.HSCore.components.HSHeader.init($('#js-header'));
+    $.HSCore.helpers.HSHamburgers.init('.hamburger');
+
+    $('.js-mega-menu').HSMegaMenu({
+        event: 'hover',
+        pageContainer: $('.container'),
+        breakpoint: 991
+    });
+
+    $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
+        afterOpen: function () {
+            $(this).find('input[type="search"]').focus();
+        }
+    });
+});
+</script>
+
+<script>
+$(function () {
+$('[data-toggle="popover"]').popover({
+  container: 'body',
+  title: 'Search',
+  html: true,
+  placement: 'bottom',
+  sanitize: false,
+  content: function () {
+      return $("#PopoverContent").html();
+  }
+});
+})
+</script>
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>

@@ -1,0 +1,562 @@
+/* .dropdown:hover>.dropdown-menu {
+  display: block;
+}
+
+.dropdown>.dropdown-toggle:active {
+    pointer-events: none;
+} */
+
+
+.modalDialog {
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.8);
+	z-index: 99999;
+	opacity: 0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
+
+.modalDialog:target {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.modalDialog>div {
+	width: 400px;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: #fff;
+	background: -moz-linear-gradient(#fff, #999);
+	background: -webkit-linear-gradient(#fff, #999);
+	background: -o-linear-gradient(#fff, #999);
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+}
+
+/* .close {
+	background: #606061;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover {
+	background: #00d9ff;
+} */
+
+#map {
+	margin: 0;
+	padding: 0;
+	width: 800px;
+	height: 1000px;
+	background: url(../../img/organigrama.jpg) top left no-repeat #fff;
+	font-family: arial, helvetica, sans-serif;
+	font-size: 8pt;
+}
+
+#map li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#map li a {
+	position: absolute;
+	display: block;
+	text-decoration: none;
+	color: #000;
+}
+
+#map li a span {
+	display: none;
+}
+
+#map li a:hover span {
+	position: relative;
+	display: block;
+	width: 200px;
+	left: 10px;
+	top: 10px;
+	border: 1px solid #000;
+	background: #fff;
+	padding: 5px;
+	filter: alpha(opacity=80);
+	opacity: 0.9;
+}
+
+#map a.SAGYP {
+	top: 60px;
+	left: 340px;
+	width: 130px;
+	height: 40px;
+}
+
+#map a.UAA {
+	top: 101px;
+	left: 180px;
+	width: 125px;
+	height: 26px;
+}
+
+#map a.UP {
+	top: 155px;
+	left: 180px;
+	width: 125px;
+	height: 36px;
+}
+
+#map a.CFCAA {
+	top: 220px;
+	left: 180px;
+	width: 125px;
+	height: 36px;
+}
+
+#map a.UI {
+	top: 270px;
+	left: 180px;
+	width: 125px;
+	height: 36px;
+}
+
+#map a.UAJ {
+	top: 101px;
+	left: 500px;
+	width: 125px;
+	height: 36px;
+}
+
+#map a.UISAA {
+	top: 151px;
+	left: 500px;
+	width: 125px;
+	height: 36px;
+}
+
+#map a.CFFAEC {
+	top: 201px;
+	left: 500px;
+	width: 125px;
+	height: 36px;
+}
+
+#map a.UPEI {
+	top: 251px;
+	left: 500px;
+	width: 125px;
+	height: 36px;
+}
+
+#map a.UT {
+	top: 281px;
+	left: 500px;
+	width: 125px;
+	height: 36px;
+}
+
+#map a.ARFC {
+	top: 64px;
+	left: 76px;
+	width: 80px;
+	height: 15px;
+}
+
+#map a.ARH {
+	top: 80px;
+	left: 76px;
+	width: 80px;
+	height: 15px;
+}
+
+#map a.ARMSG {
+	top: 100px;
+	left: 76px;
+	width: 80px;
+	height: 15px;
+}
+
+#map a.AT {
+	top: 118px;
+	left: 76px;
+	width: 80px;
+	height: 15px;
+}
+
+#map a.APE {
+	top: 134px;
+	left: 76px;
+	width: 80px;
+	height: 15px;
+}
+
+#map a.ADE {
+	top: 150px;
+	left: 76px;
+	width: 80px;
+	height: 15px;
+}
+
+#map a.APPG {
+	top: 165px;
+	left: 76px;
+	width: 80px;
+	height: 15px;
+}
+
+#map a.ACS {
+	top: 180px;
+	left: 76px;
+	width: 80px;
+	height: 15px;
+}
+
+#map a.AFSA {
+	top: 210px;
+	left: 76px;
+	width: 80px;
+	height: 15px;
+}
+
+#map a.ADRA {
+	top: 230px;
+	left: 76px;
+	width: 80px;
+	height: 15px;
+}
+
+#map a.ACAA {
+	top: 250px;
+	left: 76px;
+	width: 80px;
+	height: 15px;
+}
+
+#map a.ASG {
+	top: 270px;
+	left: 76px;
+	width: 80px;
+	height: 15px;
+}
+
+#map a.AP {
+	top: 295px;
+	left: 76px;
+	width: 80px;
+	height: 15px;
+}
+
+#map a.AC {
+	top: 78px;
+	left: 670px;
+	width: 80px;
+	height: 15px;
+}
+
+#map a.AAN {
+	top: 118px;
+	left: 670px;
+	width: 80px;
+	height: 15px;
+}
+
+#map a.AOF {
+	top: 180px;
+	left: 670px;
+	width: 80px;
+	height: 15px;
+}
+
+#map a.ATOP {
+	top: 210px;
+	left: 670px;
+	width: 80px;
+	height: 15px;
+}
+
+#map a.SAG {
+	top: 380px;
+	left: 114px;
+	width: 140px;
+	height: 25px;
+}
+
+#map a.SPA {
+	top: 380px;
+	left: 584px;
+	width: 140px;
+	height: 25px;
+}
+
+#map a.DFDA {
+	top: 430px;
+	left: 100px;
+	width: 120px;
+	height: 25px;
+}
+
+#map a.DDRS {
+	top: 500px;
+	left: 100px;
+	width: 120px;
+	height: 25px;
+}
+
+#map a.DRPA {
+	top: 570px;
+	left: 100px;
+	width: 120px;
+	height: 25px;
+}
+
+#map a.DFDG {
+	top: 640px;
+	left: 100px;
+	width: 120px;
+	height: 25px;
+}
+
+#map a.DRP {
+	top: 710px;
+	left: 100px;
+	width: 120px;
+	height: 25px;
+}
+
+#map a.DAPVIT {
+	top: 770px;
+	left: 100px;
+	width: 120px;
+	height: 25px;
+}
+
+#map a.DIR {
+	top: 860px;
+	left: 100px;
+	width: 120px;
+	height: 25px;
+}
+
+#map a.DFA {
+	top: 420px;
+	left: 250px;
+	width: 80px;
+	height: 15px;
+}
+
+#map a.DDAPF {
+	top: 450px;
+	left: 250px;
+	width: 80px;
+	height: 15px;
+}
+
+#map a.DFUCP {
+	top: 490px;
+	left: 250px;
+	width: 100px;
+	height: 15px;
+}
+
+#map a.DEITT {
+	top: 520px;
+	left: 250px;
+	width: 120px;
+	height: 15px;
+}
+
+#map a.DASPA {
+	top: 550px;
+	left: 250px;
+	width: 110px;
+	height: 15px;
+}
+
+#map a.DPPFH {
+	top: 574px;
+	left: 250px;
+	width: 110px;
+	height: 15px;
+}
+
+#map a.DPAC {
+	top: 600px;
+	left: 250px;
+	width: 100px;
+	height: 15px;
+}
+
+#map a.DGVTP {
+	top: 626px;
+	left: 250px;
+	width: 100px;
+	height: 15px;
+}
+
+#map a.DRMP {
+	top: 696px;
+	left: 250px;
+	width: 80px;
+	height: 15px;
+}
+
+#map a.DRPSG {
+	top: 726px;
+	left: 250px;
+	width: 80px;
+	height: 15px;
+}
+
+#map a.DAP {
+	top: 756px;
+	left: 260px;
+	width: 100px;
+	height: 15px;
+}
+
+#map a.DVTT {
+	top: 786px;
+	left: 260px;
+	width: 100px;
+	height: 15px;
+}
+
+#map a.DCA {
+	top: 806px;
+	left: 260px;
+	width: 100px;
+	height: 15px;
+}
+
+#map a.DCIAH {
+	top: 836px;
+	left: 250px;
+	width: 120px;
+	height: 15px;
+}
+
+#map a.DMIAH {
+	top: 862px;
+	left: 250px;
+	width: 120px;
+	height: 15px;
+}
+
+#map a.DGVIA {
+	top: 888px;
+	left: 250px;
+	width: 120px;
+	height: 15px;
+}
+
+#map a.DPIPA {
+	top: 426px;
+	left: 450px;
+	width: 110px;
+	height: 35px;
+}
+
+#map a.DOV {
+	top: 526px;
+	left: 450px;
+	width: 110px;
+	height: 25px;
+}
+
+#map a.DCAT {
+	top: 596px;
+	left: 450px;
+	width: 110px;
+	height: 25px;
+}
+
+#map a.DFAR {
+	top: 668px;
+	left: 450px;
+	width: 110px;
+	height: 25px;
+}
+
+#map a.DIPA {
+	top: 420px;
+	left: 588px;
+	width: 80px;
+	height: 15px;
+}
+
+#map a.DPPA {
+	top: 450px;
+	left: 588px;
+	width: 80px;
+	height: 15px;
+}
+
+#map a.DDPA {
+	top: 480px;
+	left: 588px;
+	width: 80px;
+	height: 15px;
+}
+
+#map a.DOP {
+	top: 516px;
+	left: 588px;
+	width: 80px;
+	height: 15px;
+}
+
+#map a.DVPA {
+	top: 546px;
+	left: 588px;
+	width: 80px;
+	height: 15px;
+}
+
+#map a.DFCA {
+	top: 586px;
+	left: 588px;
+	width: 80px;
+	height: 15px;
+}
+
+#map a.DATE {
+	top: 616px;
+	left: 588px;
+	width: 80px;
+	height: 15px;
+}
+
+#map a.DOA {
+	top: 656px;
+	left: 588px;
+	width: 80px;
+	height: 15px;
+}
+
+#map a.DDRA {
+	top: 686px;
+	left: 588px;
+	width: 80px;
+	height: 15px;
+}
